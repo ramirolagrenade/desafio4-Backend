@@ -66,15 +66,17 @@ export default class ProductManager{
 
                 await fs.promises.writeFile(this.path, JSON.stringify(products, null, '\t'))
 
-                return 'Producto Creado.'
+                return true
 
             } else {
-                return console.log('Error, codigo repe')
+                console.log('Error, codigo repe')
+                return false
             }
 
         }
         else {
-                return console.log('Error, Datos faltantes')
+            console.log('Error, Datos faltantes')
+            return false
         }
 
     }
