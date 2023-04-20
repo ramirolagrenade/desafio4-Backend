@@ -4,6 +4,7 @@ import { Server } from "socket.io"
 
 import __dirname from "./utils.js"
 import viewRouter from './routes/views.routes.js'
+import realTimeProducts from './routes/realtimeproduct.routes.js'
 
 const PORT = 8080
 const app = express()
@@ -18,7 +19,7 @@ app.set('views',__dirname+'/views')
 app.set('view engine','handlebars')
 
 app.use('/', viewRouter)
-app.use('/realtimeproducts',viewRouter)
+app.use('/realtimeproducts',realTimeProducts)
 
 const server = app.listen(PORT, ()=>{
     console.log('Servidor funcionando en el puerto '+PORT)

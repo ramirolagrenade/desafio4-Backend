@@ -5,14 +5,14 @@ const  router = Router()
 
 const productManager = new ProductManager('./src/file/products.json')
 
-router.get('/realtimeproducts', (req,res) =>{
+router.get('/', (req,res) =>{
 
     const product = productManager.getProducts()
 
     res.render('realtimeproducts',{products: product})
 })
 
-router.post('/realtimeproducts', (req,res) =>{
+router.post('/', (req,res) =>{
     const product = req.body
 
     let validar = productManager.addProduct(product)
@@ -24,3 +24,5 @@ router.post('/realtimeproducts', (req,res) =>{
     }
 
 })
+
+export default router
