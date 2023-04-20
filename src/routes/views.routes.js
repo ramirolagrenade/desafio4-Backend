@@ -9,13 +9,11 @@ router.get('/',async (req,res) =>{
 
     let product = await productManager.getProducts()
 
-    console.log(product)
-
     res.render('home',{products: product})
 })
 
-// router.get('/realtimeproducts', (req,res) =>{
-//     res.render('realtimeproducts')
-// })
+router.get('/realtimeproducts', (req,res) =>{
+    res.render('realtimeproducts')
+})
 
 export default router

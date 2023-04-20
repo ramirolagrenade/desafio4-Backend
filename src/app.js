@@ -18,7 +18,7 @@ app.set('views',__dirname+'/views')
 app.set('view engine','handlebars')
 
 app.use('/', viewRouter)
-// app.use('/realtimeproducts',)
+app.use('/realtimeproducts',viewRouter)
 
 const server = app.listen(PORT, ()=>{
     console.log('Servidor funcionando en el puerto '+PORT)

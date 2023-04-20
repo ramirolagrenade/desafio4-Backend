@@ -3,21 +3,18 @@ import fs from "fs"
 export default class ProductManager{
 
     constructor(){
-        this.path = '../src/file/products.json'
+        this.path = './src/file/products.json'
     }
     
 
     getProducts = async () => {
 
         if (fs.existsSync(this.path)) {
-            console.log('entro al if')
-
             const data = await fs.promises.readFile(this.path, 'utf-8')
             const products = JSON.parse(data)
             return products
         }
         else {
-            console.log('entro al else')
             return []
         }
     }
