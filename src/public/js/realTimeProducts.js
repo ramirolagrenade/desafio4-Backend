@@ -4,7 +4,7 @@ const log = document.getElementById('log')
 const botonEnviar = document.getElementById("enviar")
 
 botonEnviar.addEventListener("click", event => {
-    //event.preventDefault();
+
     if (event) {
         const title = document.getElementById("title").value
         const description = document.getElementById("description").value
@@ -21,6 +21,7 @@ botonEnviar.addEventListener("click", event => {
     }
 })
 
+//en revicion
 socket.on('actualizado', productos => {
     let listaProductos = document.getElementById('productos')
     listaProductos.innerHTML = ''
