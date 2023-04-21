@@ -5,17 +5,19 @@ const  router = Router()
 
 const productManager = new ProductManager('./src/file/products.json')
 
-router.get('/', (req,res) =>{
+router.get('/', async (req,res) =>{
 
-    const product = productManager.getProducts()
+    const product = await productManager.getProducts()
+
+    console.log(product)
 
     res.render('realtimeproducts',{products: product})
 })
 
-router.post('/', (req,res) =>{
-    const product = req.body
+router.post('/', async (req,res) =>{
+    
 
-    let validar = productManager.addProduct(product)
+    let validar = await productManager.addProduct(nuevoProducto)
 
     if(validar == true){
         res.status(200).send({

@@ -2,20 +2,28 @@
     <h1>Agregar Producto</h1>
     <form action="/realtimeproducts" method="post">
         <label>Titulo</label>
-        <input type="text" id="title"><br>
+        <input type="text" id="title"><br><br>
         <label>Descripcion</label>
-        <input type="text" id="description"><br>
+        <input type="text" id="description"><br><br>
         <label>Codigo</label>
-        <input type="number" id="code"><br>
+        <input type="number" id="code"><br><br>
         <label>Precio</label>
-        <input type="number" id="price"><br>
+        <input type="number" id="price"><br><br>
         <label>Cantidad de Stock</label>
-        <input type="number" id="stock"><br>
+        <input type="number" id="stock"><br><br>
         <label>categoria</label>
-        <input type="text" id="category"><br>
+        <input type="text" id="category"><br><br>
         <label>Imagen</label>
-        <input type="text" id="thumbnail"><br>
-        <input type="submit" id="enviar" value="crear">
+        <input type="text" id="thumbnail"><br><br>
+        <input type="submit" id="enviar" value="crear"><br><br>
+    </form>
+</div>
+
+<div>
+    <h1>Eliminar Producto</h1>
+    <form action="/realtimeproducts">
+        <label for="">Id del Producto a eliminar</label>
+        <input type="number" id="idDelit"><br>
     </form>
 </div>
 
@@ -32,10 +40,11 @@
         <p>stock: {{this.stock}}</p>
         <p>category: {{this.category}}</p>
         <p>thumbnail: {{this.thumbnail}}</p><br>
-        <p>-------------------------------------</p>
+        <br><br><br>
     {{/each}}
 
 </div>
 
+
 <script src="/socket.io/socket.io.js"></script>
-<script src="/js/realtimeproduct.js"></script>
+<script src="/js/realTimeProduct.js"></script>
